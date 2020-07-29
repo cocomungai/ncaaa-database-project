@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS general (
     team_name VARCHAR(255),
     team_market VARCHAR(255),
     team_id VARCHAR(255),
-    team_alias VARCHAR(20),
+    team_alias VARCHAR(40),
     conf_name VARCHAR(255),
     conf_alias VARCHAR(20),
     division_name VARCHAR(255),
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS general (
     sp_created VARCHAR(255)
 );
 
-LOAD DATA INFILE '/Users/cocomungai/Documents/Vanderbilt\ University/Year\ 3/3.3/CS\ 3265/Project/bq-results-20190418-173125-gs13sh8eyunf.csv'
+LOAD DATA INFILE '/Users/cocomungai/Documents/Vanderbilt\ University/Year\ 3/3.3/CS\ 3265/Project/ncaaa-database-project/bq-results-20190418-173125-gs13sh8eyunf.csv'
 INTO TABLE general
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
