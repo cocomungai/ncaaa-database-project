@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS megatable (
     active VARCHAR(20),
     played VARCHAR(20),
     starter VARCHAR(20),
-    minutes VARCHAR(10),
+    minutes VARCHAR(10) DEFAULT '00:00',
     minutes_int64 TINYINT UNSIGNED,
     position VARCHAR(20),
     primary_position VARCHAR(20),
