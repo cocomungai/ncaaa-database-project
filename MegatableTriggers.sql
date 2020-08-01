@@ -1,0 +1,15 @@
+USE NCAA;
+
+DROP TRIGGER IF EXISTS emptyMinutes;
+
+DELIMITER //
+
+CREATE TRIGGER emptyMinutes
+BEFORE INSERT
+ON megatable
+FOR EACH ROW
+BEGIN
+	IF (NEW.minutes = '') THEN
+		SET NEW.minutes = '00:00';
+	END IF;
+END //
