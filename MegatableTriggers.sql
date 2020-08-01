@@ -12,8 +12,4 @@ BEGIN
 	IF (NEW.minutes IS NULL) THEN
 		SET NEW.minutes = '00:00';
 	END IF;
-	IF (NEW.minutes_int64 IS NULL) THEN
-		SET NEW.minutes_int64 = 0;
-	END IF;
 END //
-
