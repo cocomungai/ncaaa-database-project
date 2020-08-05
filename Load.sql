@@ -15,6 +15,7 @@ played, starter, minutes, minutes_int64, position, primary_position, field_goals
 field_goals_pct, three_points_made, three_points_att, three_points_pct, two_points_made, two_points_att,
 two_points_pct, blocked_att, free_throws_made, free_throws_att, free_throws_pct, offensive_rebounds, defensive_rebounds,
 rebounds, assists, turnovers, steals, blocks, assists_turnover_ratio, personal_fouls, tech_fouls, flagrant_fouls,
-points, sp_created)
+points, @sp_created)
 SET gametime = STR_TO_DATE(@gametime, '%Y-%m-%d %H:%i:%S'),
-	birthplace_country = TRIM(@birthplace_country);
+	birthplace_country = TRIM(@birthplace_country),
+	sp_created = STR_TO_DATE(@sp_created, '%Y-%m-%d %H:%i:%S');
