@@ -1,2 +1,4 @@
 # ignore data file
 ncaa-bball-stats.csv
+.DS_Store
+csvLocalFilepath.txt
