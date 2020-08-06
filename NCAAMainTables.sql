@@ -63,12 +63,7 @@ CREATE TABLE players (
     birthplace_city VARCHAR(40),
     birthplace_state VARCHAR(40),
     birthplace_country VARCHAR(40),
-    team_id VARCHAR(255),
-    PRIMARY KEY (player_id),
-    CONSTRAINT fk_teamid FOREIGN KEY (team_id)
-		REFERENCES teams (team_id)
-        ON UPDATE CASCADE
-        ON DELETE RESTRICT
+    PRIMARY KEY (player_id)
 );
 
 # This table contains all of the player statistics available for every game in the data and 
@@ -110,6 +105,7 @@ CREATE TABLE player_stats (
     tech_fouls TINYINT UNSIGNED,
     flagrant_fouls TINYINT UNSIGNED,
     points TINYINT UNSIGNED,
+    team_id VARCHAR(255),
     PRIMARY KEY (player_id, game_id),
     CONSTRAINT fk_playerid_stats FOREIGN KEY (player_id)
 		REFERENCES players (player_id)
@@ -117,6 +113,10 @@ CREATE TABLE player_stats (
         ON DELETE RESTRICT,
 	CONSTRAINT fk_gameid_stats FOREIGN KEY (game_id)
 		REFERENCES games (game_id)
+        ON UPDATE CASCADE
+        ON DELETE RESTRICT,
+	CONSTRAINT fk_teamid_stats FOREIGN KEY (team_id)
+		REFERENCES teams (team_id)
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 );
