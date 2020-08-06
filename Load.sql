@@ -1,7 +1,7 @@
 SET SQL_MODE = '';
 
 # replace filepath here with local path to data file, refer to README for more details
-LOAD DATA INFILE '/Users/cocomungai/Documents/Vanderbilt\ University/Year\ 3/3.3/CS-3265/Project/ncaa-bball-stats.csv'
+LOAD DATA INFILE '/Users/tomwesterhold/Desktop/TommyWesterhold/School/Vanderbilt/DatabaseManagementSystems/NCAA_Repo/ncaa-database-project/ncaa-bball-stats.csv'
 INTO TABLE megatable
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
