@@ -1,5 +1,7 @@
 # This file inserts all relevant data from the megatable into our normalized tables
 
+SET SQL_MODE = '';
+
 USE NCAA;
 
 INSERT INTO games
@@ -20,7 +22,7 @@ INSERT INTO players
 	SELECT player_id, last_name, first_name, full_name, abbr_name, birthplace, 
 			birthplace_city, birthplace_state, birthplace_country
 	FROM megatable
-    GROUP BY player_id;
+  GROUP BY player_id;
 
 INSERT INTO player_stats
 	SELECT player_id, status, jersey_number, height, weight, class, game_id, home_team, active,
@@ -29,3 +31,4 @@ INSERT INTO player_stats
 			free_throws_att, offensive_rebounds, defensive_rebounds, rebounds, assists, turnovers, steals,
 			blocks, personal_fouls, tech_fouls, flagrant_fouls, points, team_id
 	FROM megatable;
+

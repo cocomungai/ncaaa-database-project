@@ -40,8 +40,8 @@ CREATE TABLE tournament_games (
 DROP TABLE IF EXISTS teams;
 CREATE TABLE teams (
 	team_id VARCHAR(255),
-	team_name VARCHAR(100),
-    team_market VARCHAR(255),
+	team_market VARCHAR(100),
+    team_name VARCHAR(255),
     team_alias VARCHAR(20),
     conf_name VARCHAR(255),
     conf_alias VARCHAR(20),
@@ -106,7 +106,7 @@ CREATE TABLE player_stats (
     flagrant_fouls TINYINT UNSIGNED,
     points TINYINT UNSIGNED,
     team_id VARCHAR(255),
-    PRIMARY KEY (player_id, game_id),
+    PRIMARY KEY (player_id, game_id, team_id),
     CONSTRAINT fk_playerid_stats FOREIGN KEY (player_id)
 		REFERENCES players (player_id)
         ON UPDATE CASCADE
