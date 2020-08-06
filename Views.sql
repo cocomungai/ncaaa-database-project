@@ -3,7 +3,7 @@
 USE NCAA;
 
 CREATE OR REPLACE VIEW team_scores AS
-SELECT game_id, scheduled_date, gametime, team_id, team_market, team_name, SUM(points) AS score, home_team
+SELECT game_id, scheduled_date, gametime, team_id, team_market, team_name, SUM(points) AS score, home_team, season
 FROM games AS G JOIN 
 	(SELECT game_id, team_id, team_market, team_name, points, home_team
 	FROM teams AS T JOIN player_stats AS P_S USING (team_id)) AS TP_S
@@ -12,7 +12,7 @@ GROUP BY game_id, team_id, home_team
 ORDER BY game_id, home_team;
 
 CREATE OR REPLACE VIEW both_teams AS
-SELECT T_S1.game_id AS game_id, T_S1.scheduled_date AS scheduled_date, T_S1.gametime AS gametime, T_S1.team_id AS away_id,
+SELECT T_S1.game_id AS game_id, T_S1.season AS season, T_S1.scheduled_date AS scheduled_date, T_S1.gametime AS gametime, T_S1.team_id AS away_id,
 	T_S1.team_market AS away_school, T_S1.team_name AS away_team, T_S1.score AS away_score, T_S1.home_team AS home_false, T_S2.team_id AS home_id,
 	T_S2.team_market AS home_school, T_S2.team_name AS home_team, T_S2.score AS home_score, T_S2.home_team AS home_true
 FROM team_scores AS T_S1 JOIN team_scores AS T_S2 ON T_S1.game_id = T_S2.game_id AND T_S1.home_team < T_S2.home_team;
