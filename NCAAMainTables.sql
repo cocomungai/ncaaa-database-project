@@ -59,15 +59,10 @@ CREATE TABLE players (
     first_name VARCHAR(50),
     full_name VARCHAR(100),
     abbr_name VARCHAR(75),
-    status VARCHAR(10),
-    jersey_number TINYINT UNSIGNED,
-    height TINYINT UNSIGNED,
-    weight TINYINT UNSIGNED,
     birthplace VARCHAR(255),
     birthplace_city VARCHAR(40),
     birthplace_state VARCHAR(40),
     birthplace_country VARCHAR(40),
-    class VARCHAR(40),
     team_id VARCHAR(255),
     PRIMARY KEY (player_id),
     CONSTRAINT fk_teamid FOREIGN KEY (team_id)
@@ -81,6 +76,11 @@ CREATE TABLE players (
 DROP TABLE IF EXISTS player_stats;
 CREATE TABLE player_stats (
 	player_id VARCHAR(255),
+    status VARCHAR(10),
+    jersey_number TINYINT UNSIGNED,
+    height TINYINT UNSIGNED,
+    weight TINYINT UNSIGNED,
+    class VARCHAR(40),
     game_id VARCHAR(255),
     home_team VARCHAR(20),
     active VARCHAR(20),
