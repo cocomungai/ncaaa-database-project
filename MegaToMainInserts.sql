@@ -31,3 +31,4 @@ INSERT INTO player_stats
 			free_throws_att, offensive_rebounds, defensive_rebounds, rebounds, assists, turnovers, steals,
 			blocks, personal_fouls, tech_fouls, flagrant_fouls, points, team_id
 	FROM megatable;
+

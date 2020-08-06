@@ -35,20 +35,23 @@
         </td>
     </tr>
     <tr>
-        <th>
+        <th colspan="4">
             Inserts
         </th>
     </tr>
     <tr>
-        <th>
-
-        </th>
-        <th>
-
-        </th>
-        <th>
-
-        </th>
+        <td>
+            <a href="insertGame.php">Insert new game</a>
+        </td>
+        <td>
+            <a href="insertTeam.php">Insert new team</a>
+        </td>
+        <td>
+            <a href="insertPlayer.php">Insert new player</a>
+        </td>
+        <td>
+            <a href="insertStats.php">Insert player stats</a>
+        </td>
     </tr>
 </table>
 </body>

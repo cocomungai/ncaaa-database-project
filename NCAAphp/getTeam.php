@@ -57,8 +57,9 @@ if (isset($_POST['submit'])) {
     </form>
 
 <?php
-if (isset($_POST['submit'])) {
-    if ($result && $prepared_stmt->rowCount() > 0) { ?>
+if (isset($_POST['submit'])) { ?>
+    <div>You searched for <?php echo $_POST['inputStr'] ?></div>
+    <?php if ($result && $prepared_stmt->rowCount() > 0) { ?>
 
         <h2>Teams</h2>
 
